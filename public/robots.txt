@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+
+
+//navbar
+<img src="./images/5slogo.jpeg" alt="5s" className="img-fluid " style={{height:"50px" , width: "10%"  , borderRadius: "7px"}} /></Link>
