@@ -1,0 +1,665 @@
+ {/* navbar start */}
+
+ <nav className="navbar navbar-expand-md navbar-light bg-secondary bg-gradient sticky-lg-top  ">
+ <div className="container-fluid">
+
+     {/* navbar brand img start */}
+     <Link className="navbar-brand bg-imageFluid" to="/" >
+         <img style={{ height: "50px", width: "90%" }} src="https://img.freepik.com/free-vector/open-book-icon-education-symbol-flat-design-vector-illustration_53876-136267.jpg?w=740&t=st=1674148367~exp=1674148967~hmac=c6571fea419550f1011fc6b78f63949db0d117f26d06d17f5a2dd189cf265604" />
+     </Link>
+     {/* navbar brand img end*/}
+
+
+
+     {/* toggle button start */}
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+     </button>
+     {/* toggle button end */}
+
+     {/* style={{ width: "auto", margin: "auto", height: "auto " }} */}
+
+
+     {/* heading start */}
+     <div className="nav-brand lead " ><h1 id="heading"> Library Management System</h1></div>
+     {/* heading end */}
+
+
+     <div className="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul className="navbar-nav ms-auto f-right mb-0">
+
+             <li className="nav-item m-auto f-right">
+                 <Link className="nav-link " aria-current="page" to="/">Home</Link>
+             </li>
+
+             <li className="nav-item f-right m-auto">
+                 <Link className="btn btn-outline-dark btn-info" to="/login" onClick={Logout} role="button">Logout</Link>
+             </li>
+             
+         </ul>
+
+     </div>
+ </div>
+</nav>
+{/* navbar end */}
+
+
+
+//new user
+
+<div class="container-fluid d-flex justify-content-center align-items-center  ">
+                    
+               
+<form class="form-newuser w-50 ">
+     <h1 style={{color:"aquamarine",textAlign:"center"}}>Add new user</h1>
+    <div class="form-outline mb-4 ">
+        <label class="form-label" for="form4Example1">Name</label>
+
+        <input type="text" id="form4Example1" class="form-control" />
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form4Example2">Author</label>
+
+        <input type="email" id="form4Example2" class="form-control" />
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form4Example2">No of pages</label>
+
+        <input type="email" id="form4Example2" class="form-control" />
+    </div>
+
+    <div class="form-outline  mb-4">
+        <label class="form-label" for="form4Example3">Category' </label>
+
+        <textarea class="form-control" id="form4Example3"></textarea>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary btn-block ">Send</button>
+</form>
+
+</div>
+
+<!-- navbar end -->
+
+
+<!-- login button ok and cancel start -->
+<!-- login button ok and cancel end -->
+
+
+<!-- modal start -->
+{/* <Modal size="lg" isOpen={modal} toggle={() => setmodel(!modal)} class=" btn mt-3">
+
+    <ModalHeader>
+        Add Book
+    </ModalHeader>
+    <ModalBody>
+        <div className="form-group">
+            <label htmlFor="email">Name</label>
+            <input type="text" className="form-control" placeholder="name" />
+        </div>
+
+        <div className="form-group">
+            <label htmlFor="email">author</label>
+            <input type="email" className="form-control" placeholder="author" />
+        </div>
+
+        <div className="form-group">
+            <label htmlFor="email">No of Pages</label>
+            <input type="email" className="form-control" placeholder="no of pages" />
+        </div>
+
+        <div className="form-group">
+            <label htmlFor="email">Category</label>
+            <input type="email" className="form-control" placeholder="category" />
+        </div>
+
+        <div class="d-flex justify-content-right m-auto ">
+            <button class="btn btn-primary btn-lg   " type="submit">Save</button>
+
+            <button class="btn btn-primary btn-lg  " type="submit">Cancel</button>
+
+        </div>
+
+
+
+    </ModalBody>
+    <ModalFooter>
+
+    </ModalFooter>
+</Modal> */}
+<!-- modal end -->
+
+
+<!-- modal start 2 -->
+<div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" id="recipient-name"  onChange={(e) => setName(e.target.value)} />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Author:</label>
+                            <input class="form-control" id="text"  onChange={(e) => setAuthor(e.target.value)}></input>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">no of pages:</label>
+                            <input class="form-control" id="text" onChange={(e) => setPages(e.target.value)} ></input>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">category:</label>
+                            <input class="form-control" id="text"  onChange={(e) => setCategory(e.target.value)}></input>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    {/* <button type="button" class="btn btn-primary"  onClick={(e) => handleAdd(e)} typeof="submit" >Save changes</button> */}
+                    
+                </div>
+                <button type="button" class="btn btn-primary m-auto mb-4" type="submit"  onClick={(e) => handleAdd(e)} >Save changes</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal end -->
+
+
+
+
+<!-- ********************************************************* -->
+
+//**********Add book data temp start**********
+
+    //1 try
+    // const handleAdd = (e) => {
+    //     e.preventDefault();
+
+    //     const ids = uuid();
+    //     let uniqueid = ids.slice(0, 8)
+
+    //     let a = name,
+    //         b = author,
+    //         c = noofpages,
+    //         d = category
+
+    //     users.push({ id: uniqueid, name: a, author: b, pages: c, Category: d })
+
+    //     history('/dashboard');
+
+
+
+    // }
+
+    //2 try
+    const [status, setStatus] = useState(false);
+    function Addlist({ setData }) {
+
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const name = e.target.name.value;
+            const author = e.target.author.value;
+            const pages = e.target.pages.value;
+            const Category = e.target.category.value;
+
+            const newuser = { name, author, pages, Category }
+
+            setData((prevList) => {
+                return prevList.concat(newuser)
+            })
+
+
+        }
+
+
+        return (
+            <div class="container ">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 ">
+                        <form onSubmit={handleSubmit}>
+                          
+                        <table style={{width:"100%"}}>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Author</th>
+                                    <th>No of Pages</th>
+                                    <th>Category</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="name" placeholder="Enter name" required /></td>
+                                    <td><input type="text" name="author" placeholder="Enter Author" required /></td>
+                                    <td><input type="text" name="pages" placeholder="Enter pages" required /></td>
+                                    <td><input type="text" name="category" placeholder="Enter Category" required /></td>
+                                    <td>
+                                    <button type="submit" class="btn btn-info m-2 ">Save</button>
+                            <button type="submit" class="btn btn-info " onClick={() => window.location.reload(false)}>Cancel</button>
+
+                                    </td>
+                                </tr>
+                              
+                            </table>
+{/* 
+                            <input type="text" name="name" placeholder="Enter name" required />
+                            <input type="text" name="author" placeholder="Enter Author" required />
+                            <input type="text" name="pages" placeholder="Enter pages" required />
+                            <input type="text" name="category" placeholder="Enter Category" required />
+                            <button type="submit" class="btn btn-info m-2 ">Save</button>
+                            <button type="submit" class="btn btn-info " onClick={() => window.location.reload(false)}>Cancel</button> */}
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            //2
+
+            //     <div>
+            //     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            //         <div class="modal-dialog">
+            //             <div class="modal-content">
+
+            //                 <div class="modal-header">
+            //                     <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+            //                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            //                 </div>
+
+            //                 <div class="modal-body">
+            //                     <form  onSubmit={handleSubmit}>
+            //                         <div class="mb-3">
+            //                             <label for="recipient-name" class="col-form-label">Name</label>
+            //                             <input type="text" name="name" class="form-control" id="recipient-name" onChange={(e) => setName(e.target.value)} />
+            //                         </div>
+
+            //                         <div class="mb-3">
+            //                             <label for="message-text" class="col-form-label">Author:</label>
+            //                             <input class="form-control" name="author" id="text" onChange={(e) => setAuthor(e.target.value)}></input>
+            //                         </div>
+
+            //                         <div class="mb-3">
+            //                             <label for="message-text" class="col-form-label">no of pages:</label>
+            //                             <input class="form-control" name="pages" id="text" onChange={(e) => setPages(e.target.value)} ></input>
+            //                         </div>
+
+            //                         <div class="mb-3">
+            //                             <label for="message-text" class="col-form-label">category:</label>
+            //                             <input class="form-control" name="category" id="text" onChange={(e) => setCategory(e.target.value)}></input>
+            //                         </div>
+
+            //                     </form>
+            //                 </div>
+
+            //                 <div class="modal-footer">
+            //                     {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+            //                     {/* <button type="button" class="btn btn-primary"  onClick={(e) => handleAdd(e)} typeof="submit" >Save changes</button> */}
+
+            //                 </div>
+            //                 <button type="button" class="btn btn-primary m-auto mb-4" >Save</button>
+
+            //             </div>
+            //         </div>
+            //     </div>
+            // </div>
+
+        );
+
+
+
+    }
+
+    <!-- *************************************** -->
+
+
+
+
+
+    ADD BOOK 2ND TRY
+    {/* 
+        <input type="text" name="name" placeholder="Enter name" required />
+        <input type="text" name="author" placeholder="Enter Author" required />
+        <input type="text" name="pages" placeholder="Enter pages" required />
+        <input type="text" name="category" placeholder="Enter Category" required />
+        <button type="submit" class="btn btn-info m-2 ">Save</button>
+        <button type="submit" class="btn btn-info " onClick={() => window.location.reload(false)}>Cancel</button> */}
+
+
+
+
+
+        <!-- -------------------------------------------- in add list -->
+        //2
+
+        //     <div>
+        //     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        //         <div class="modal-dialog">
+        //             <div class="modal-content">
+
+        //                 <div class="modal-header">
+        //                     <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+        //                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+        //                 </div>
+
+        //                 <div class="modal-body">
+        //                     <form  onSubmit={handleSubmit}>
+        //                         <div class="mb-3">
+        //                             <label for="recipient-name" class="col-form-label">Name</label>
+        //                             <input type="text" name="name" class="form-control" id="recipient-name" onChange={(e) => setName(e.target.value)} />
+        //                         </div>
+
+        //                         <div class="mb-3">
+        //                             <label for="message-text" class="col-form-label">Author:</label>
+        //                             <input class="form-control" name="author" id="text" onChange={(e) => setAuthor(e.target.value)}></input>
+        //                         </div>
+
+        //                         <div class="mb-3">
+        //                             <label for="message-text" class="col-form-label">no of pages:</label>
+        //                             <input class="form-control" name="pages" id="text" onChange={(e) => setPages(e.target.value)} ></input>
+        //                         </div>
+
+        //                         <div class="mb-3">
+        //                             <label for="message-text" class="col-form-label">category:</label>
+        //                             <input class="form-control" name="category" id="text" onChange={(e) => setCategory(e.target.value)}></input>
+        //                         </div>
+
+        //                     </form>
+        //                 </div>
+
+        //                 <div class="modal-footer">
+        //                     {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+        //                     {/* <button type="button" class="btn btn-primary"  onClick={(e) => handleAdd(e)} typeof="submit" >Save changes</button> */}
+
+        //                 </div>
+        //                 <button type="button" class="btn btn-primary m-auto mb-4" >Save</button>
+
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
+
+        <!-- ----------------------------------------------------------- -->
+
+
+        //**********Add book data temp start**********
+
+        //1 try
+        // const handleAdd = (e) => {
+        //     e.preventDefault();
+    
+        //     const ids = uuid();
+        //     let uniqueid = ids.slice(0, 8)
+    
+        //     let a = name,
+        //         b = author,
+        //         c = noofpages,
+        //         d = category
+    
+        //     users.push({ id: uniqueid, name: a, author: b, pages: c, Category: d })
+    
+        //     history('/dashboard');
+    
+    
+    
+        // }
+    
+        //2 try
+        const [status, setStatus] = useState(false);
+        function Addlist({ setData }) {
+    
+    
+            function handleSubmits(e) {
+                e.preventDefault();
+    
+                const name = e.target.name.value;
+                const author = e.target.author.value;
+                const pages = e.target.pages.value;
+                const Category = e.target.category.value;
+    
+                const newuser = { name, author, pages, Category }
+    
+                setData((prevList) => {
+                    return prevList.concat(newuser)
+                })
+    
+    
+            }
+    
+    
+            return (
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 ">
+                            <form onSubmit={handleSubmits}>
+                              
+                            <table style={{width:"100%"}}>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Author</th>
+                                        <th>No of Pages</th>
+                                        <th>Category</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="name" placeholder="Enter name" required /></td>
+                                        <td><input type="text" name="author" placeholder="Enter Author" required /></td>
+                                        <td><input type="text" name="pages" placeholder="Enter pages" required /></td>
+                                        <td><input type="text" name="category" placeholder="Enter Category" required /></td>
+                                        <td>
+                                        <button type="submit" class="btn btn-info m-2 ">Save</button>
+                                <button type="submit" class="btn btn-info " onClick={() => window.location.reload(false)}>Cancel</button>
+    
+                                        </td>
+                                    </tr>
+                                  
+                                </table>
+    
+    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+              
+    
+            );
+    
+    
+    
+        }
+    
+    
+        //*********Add book data temp end************
+
+
+        ///LOGIN REDIRET 
+        //    signinup function start
+        // function signupfunction() {
+        //     if (window.confirm("do u want to signup")) {
+        //         window.location.to = "http://127.0.0.1:5502/";
+    
+    
+        //     }
+        //     else {
+        //         // alert('fine, if not want');
+        //         window.location.to = "http://127.0.0.1:5502/index.html";
+        //     }
+        // }
+        // signinup function end
+    
+    
+    
+        // signinin function start
+        // function Logout() {
+    
+        //     if (window.confirm("do you want to Logout")) {
+        //         // window.location.to = "http://127.0.0.1:3301/Login.js";
+        //         window.location.to="http://localhost:3001/login";
+        //     }
+        //     else {
+        //         window.location.to = "http://127.0.0.1:3301/";
+    
+        //     }
+        // }
+        // signin function end
+
+        
+
+        <!-- edit ********************************** -->
+
+        //*********EDIT DATA START*********
+
+
+        //*********UPDATE BOOK START*********
+        function handleUpdate(e) {
+            e.preventDefault();
+    
+            setUpdateState()
+    
+        }
+    
+    
+        const [updateState, setUpdateState] = useState(); //-1
+        // const [userId, setUserId] = useState(null)
+        //*********UPDATE BOOK END*********
+    
+    
+        function handleEdit(id) {
+            setUpdateState(id)
+        }
+    
+        function Edit({ user, users, setData }) {
+    
+            function handleInput(e) {
+                e.preventDefault();
+    
+    
+    
+                const newlist = users.map(list => (
+    
+                    list.id === user.id ? ({ ...list, [e.target.name]: e.target.value }) : (list)
+                    // list.id === user.id ? ({ ...list, newuser} ): (list)           
+    
+    
+                ))
+                setData(newlist)
+                // setUserId(null)  for cancel
+    
+    
+            }
+            return (
+                <>  
+                 <tr >
+                    {/* <td ><input  type="text" name="id" value={user.id} onChange={handleInput} /></td> */}
+                    <td><input type="text" name="name" value={user.name} onChange={(e) => handleInput(e)} /> </td>
+                    <td><input type="text" name="author" value={user.author} onChange={handleInput} /></td>
+                    <td><input type="text" name="pages" value={user.pages} onChange={handleInput} /></td>
+                    <td><input type="text" name="Category" value={user.Category} onChange={handleInput} /></td>
+                    <td> <button class="btn btn-outline-success" type="submit" >update</button>
+                        <button class="btn btn-outline-danger" onClick={() => window.location.reload(false)}>Cancel</button></td>
+                    {/* / onClick={() => setUserId(null)} */}
+                </tr>
+    
+    
+                </>
+            )
+        }
+    
+        //*********EDIT DATA END*********
+
+        
+
+
+
+        {/*  edit popup start */}
+     <div>
+            <div class="modal fade" id="exampleEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Book</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Name</label>
+                                    <input type="text" class="form-control" id="recipient-name" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">author:</label>
+                                    <input class="form-control" id="text"></input>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Message:</label>
+                                    <input class="form-control" id="text"></input>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Message:</label>
+                                    <input class="form-control" id="text"></input>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         edit popup end */}
+
+
+
+        {/* <NavLink ><button class="btn btn-outline-success">Edit</button></NavLink> */}
+
+
+
+        //edit in reutrn 
+
+        <tr >
+            {/* <td ><input  type="text" name="id" value={user.id} onChange={handleInput} /></td> */}
+            <td><input type="text" name="name" value={user.name} onChange={(e) => handleInput(e)} /> </td>
+            <td><input type="text" name="author" value={user.author} onChange={handleInput} /></td>
+            <td><input type="text" name="pages" value={user.pages} onChange={handleInput} /></td>
+            <td><input type="text" name="Category" value={user.Category} onChange={handleInput} /></td>
+            <td> <button class="btn btn-outline-success" type="submit" >update</button>
+                <button class="btn btn-outline-danger" onClick={   (e) => window.location.reload(false) }>Cancel</button></td>
+            {/* / onClick={() => setUserId(null)}   (e)=>handleCancel(e)   */}
+        </tr>
+
+
+
+        <!-- demo login states  -->
+        // ********states start**********
+        // const [user, setUser] = useState();
+        // const [pass, setPass] = useState();
+        // const [login, setLoggedIn] = useState("shubh");
+        // const [datauser, setDatauser] = useState("");
+        // const [datapass, setDatapass] = useState("");
+         // ********states end**********
+<!-- demo login end     -->

@@ -1,0 +1,43 @@
+
+[
+    
+    {
+      "id": 1,
+      "author": "shubham",
+      "pages": "50",
+      "name": "Leanne Graham",
+      "Category": "Adventure stories",
+      "username": "Bret",
+      "email": "Sincere@april.biz"
+    },
+
+    {
+      "id": 2,
+      "author": "pranav",
+      "pages": "100",
+      "Category": "Crime",
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv"
+    },
+
+    {
+      "id": 3,
+      "author": "Hrishi",
+      "pages": "300",
+      "Category": "Horror",
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net"
+    },
+
+    {
+      "id": 4,
+      "author": "ashu",
+      "pages": "320",
+      "Category": "Biography",
+      "name": "Patricia Lebsack",
+      "username": "Karianne",
+      "email": "Julianne.OConner@kory.org"
+    }
+  ]
