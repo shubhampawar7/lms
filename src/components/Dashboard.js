@@ -137,17 +137,20 @@ function Dashboard() {
             </>
         )
     }
-
+ 
     //*********EDIT DATA END*********
 
 
     //*********UPDATE BOOK START*********
+
     function handleUpdate(e) {
         e.preventDefault();
         setUpdateState(-1)
     }
+    
     function handleCancel(e) {
         e.preventDefault();
+        setUpdateState(-1)
 
     }
 
@@ -156,7 +159,7 @@ function Dashboard() {
     // const [userId, setUserId] = useState(null)
     //*********UPDATE BOOK END*********dd
 
-
+// this is dev branch
 
 
 
