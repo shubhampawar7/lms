@@ -140,12 +140,17 @@ function Login() {
                         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
 
                             <div className="formMain ">
-                                <h1 style={{ color: "white" }} class="d-flex justify-content-center">Login</h1>
+                                {/* <h1 style={{ color: "white" }} class="d-flex justify-content-center">Login</h1> */}
                                 {
                                     getemail && getpass ?  (<Navigate to="/dashboard"  element={<Dashboard />} replace/> ):(
                                         <form className="formInner" onSubmit={formData}>
+                                            <div class="">
+                                            <h1 style={{ color: "Black" }} class="d-flex justify-content-center">Login</h1>
 
+                                            <img src="https://www.shutterstock.com/image-illustration/logo-design-book-black-white-600w-2202907397.jpg"  width={260} height={100} />
+                                            </div>
                                             <div class="form-outline form-dark mb-4">
+                                                
                                                 <label class="form-label" for="typeEmailX">Username :</label>
                                                 <input id="typeEmailX" class="form-control form-control-lg" type="text" placeholder="username" required onChange={Uservalid} ref={email} />
                                                 {userValiddata == 1 ? ("") : (<p style={{ color: "red" }}>minimum 5 char required *</p>)}

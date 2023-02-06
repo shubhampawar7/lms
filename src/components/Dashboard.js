@@ -137,17 +137,20 @@ function Dashboard() {
             </>
         )
     }
-
+ 
     //*********EDIT DATA END*********
 
 
     //*********UPDATE BOOK START*********
+
     function handleUpdate(e) {
         e.preventDefault();
         setUpdateState(-1)
     }
+    
     function handleCancel(e) {
         e.preventDefault();
+        setUpdateState(-1)
 
     }
 
